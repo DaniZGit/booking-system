@@ -5,9 +5,11 @@
         @if (count($bookings))
             <div class="grid grid-cols-3 gap-4">
                 @foreach ($bookings as $booking)
-                    <div class="border border-gray-300 rounded-xl hover:shadow-md transition-shadows overflow-hidden flex flex-col">
+                    <div class="border border-gray-300 rounded-xl hover:shadow-md transition-shadows overflow-hidden flex flex-col group">
                         @if($booking->room->hasImage('cover'))
-                            <img src="{{ $booking->room->image('cover') }}" alt="{{ $booking->room->title }}" class="aspect-video h-48 w-full object-cover">
+                            <div class="rounded-t-xl overflow-hidden">
+                                <img src="{{ $booking->room->image('cover') }}" alt="{{ $booking->room->title }}" class="aspect-video h-48 w-full object-cover group-hover:scale-110 transition-all duration-500">
+                            </div>
                         @else
                             <div class="rounded-md aspect-video h-48 bg-gray-200 flex items-center justify-center text-gray-500">
                               {{ __('bookings.no_image') }}

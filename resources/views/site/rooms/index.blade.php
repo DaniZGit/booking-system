@@ -4,11 +4,13 @@
 
         <div class="grid grid-cols-3 gap-4">
             @foreach ($rooms as $room)
-                <div class="rounded-xl border border-gray-300 p-4 hover:shadow-md transition-shadow flex flex-col gap-2">
+                <div class="rounded-xl border border-gray-300 p-4 hover:shadow-md transition-shadow flex flex-col gap-2 group">
                     <span class="font-bold text-xl capitalize line-clamp-2">{{ $room->title }}</span>
                     
                     @if($room->hasImage('cover'))
-                        <img src="{{ $room->image('cover') }}" alt="{{ $room->title }}" class="rounded-xl aspect-video">
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="{{ $room->image('cover') }}" alt="{{ $room->title }}" class=" aspect-video group-hover:scale-110 transition-all duration-500">
+                    </div>
                     @else
                         <div class="rounded-xl aspect-video bg-gray-200 flex items-center justify-center text-gray-500">
                             No Image

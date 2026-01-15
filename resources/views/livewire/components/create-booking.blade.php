@@ -98,13 +98,13 @@ new class extends Component {
             <!-- Step 1 -->
             <div class="flex flex-col gap-4" @if($this->currentStep != 1) style="display: none;" @endif>
                 <div class="flex flex-col">
-                    <x-input-label value="Select from date" />
+                    <x-input-label value="{{ __('create_booking.date_from_label') }}" />
                     <input type="date" wire:model.live="dateFrom" min="{{ Carbon::now()->toDateString() }}" >
                     <small class="text-red-500">@error('dateFrom'){{ $message }}@enderror</small>
                 </div>
             
                 <div class="flex flex-col">
-                    <x-input-label value="Select to date" />
+                    <x-input-label value="{{ __('create_booking.date_to_label') }}" />
                     <input type="date" wire:model.live="dateTo" min="{{ $this->dateFrom ? Carbon::create($this->dateFrom)->addDay()->toDateString() : Carbon::now()->toDateString() }}" >
                     <small class="text-red-500">@error('dateTo'){{ $message }}@enderror</small>
                 </div>
@@ -125,13 +125,13 @@ new class extends Component {
             <!-- Step 2 -->
             <div class="flex flex-col gap-4" @if($this->currentStep != 2) style="display: none;" @endif>
                 <div class="flex flex-col">
-                    <x-input-label value="Name" />
+                    <x-input-label value="{{ __('create_booking.name_label') }}" />
                     <input type="text" wire:model.live="name" />
                     <small class="text-red-500">@error('name'){{ $message }}@enderror</small>
                 </div>
             
                 <div class="flex flex-col">
-                    <x-input-label value="Email" />
+                    <x-input-label value="{{ __('create_booking.email_label') }}" />
                     <input type="email" wire:model.live="email" />
                     <small class="text-red-500">@error('email'){{ $message }}@enderror</small>
                 </div>

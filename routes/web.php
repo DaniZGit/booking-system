@@ -21,6 +21,7 @@ Route::group([
     require __DIR__.'/auth.php';
 });
 
+// It seems there is a problem with Livewire and localization package
 Route::prefix(LaravelLocalization::setLocale())->middleware('localeSessionRedirect', 'localizationRedirect', 'localeViewPath')->group(function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
