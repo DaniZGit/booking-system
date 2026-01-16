@@ -46,7 +46,7 @@ docker compose up -d
 
 ```
 php artisan migrate
-php artisan db:seed --class=RoomSeeder
+php artisan db:seed
 ```
 
 ### 5. Zagon aplikacije
