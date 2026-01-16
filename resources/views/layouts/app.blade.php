@@ -17,7 +17,7 @@
     <body class="font-sans antialiased w-full">
         <div class="min-h-screen flex flex-col bg-white">
             <!-- Page Heading -->
-            <div class="bg-gray-200">
+            <div class="bg-gray-200 sticky top-0 border-b border-b-gray-300">
                 <header class="max-w-7xl mx-auto p-4">
                     <livewire:layout.header />
                 </header>

@@ -5,7 +5,9 @@
         <div class="grid grid-cols-3 gap-4">
             @foreach ($rooms as $room)
                 <div class="rounded-xl border border-gray-300 p-4 hover:shadow-md transition-shadow flex flex-col gap-2 group">
-                    <span class="font-bold text-xl capitalize line-clamp-2">{{ $room->title }}</span>
+                    <a href="{{ route('frontend.room', $room->slug) }}" wire:navigate class="hover:underline">
+                        <span class="font-bold text-xl capitalize line-clamp-2 ">{{ $room->title }}</span>
+                    </a>
                     
                     @if($room->hasImage('cover'))
                     <div class="rounded-xl overflow-hidden">
